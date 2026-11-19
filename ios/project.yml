@@ -1,0 +1,45 @@
+name: VRProto
+options:
+  bundleIdPrefix: com.vrproto
+  deploymentTarget:
+    iOS: "15.0"
+targets:
+  VRProto:
+    type: application
+    platform: iOS
+    sources:
+      - path: Sources
+      - path: Assets.xcassets
+      - path: www
+        type: folder
+        buildPhase: resources
+    settings:
+      base:
+        PRODUCT_NAME: VRProto
+        PRODUCT_BUNDLE_IDENTIFIER: com.vrproto.app
+        MARKETING_VERSION: "25"
+        CURRENT_PROJECT_VERSION: "25"
+        SWIFT_VERSION: "5.0"
+        TARGETED_DEVICE_FAMILY: "1,2"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ENABLE_BITCODE: NO
+    info:
+      path: Sources/Info.plist
+      properties:
+        CFBundleDisplayName: SKZ VR
+        CFBundleName: SKZ VR
+        NSCameraUsageDescription: "A câmera é usada para rastrear as suas mãos e para a passagem da câmera."
+        NSMotionUsageDescription: "Os sensores de movimento controlam a direção do olhar no VR."
+        UIRequiresFullScreen: true
+        UIStatusBarHidden: true
+        UIViewControllerBasedStatusBarAppearance: true
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        UISupportedInterfaceOrientations~ipad:
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        UILaunchScreen: {}
+        NSAppTransportSecurity:
+          NSAllowsLocalNetworking: true
+          NSAllowsArbitraryLoadsInWebContent: true
